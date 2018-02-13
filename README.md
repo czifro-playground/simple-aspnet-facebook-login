@@ -22,3 +22,7 @@ To run using docker:
 1. `docker run -ti -p 5000:5000 -e FACEBOOK_APPID=<facebook-appid> FACEBOOK_APPSECRET=<facebook-appsecret> czifro/simple-aspnet-facebook-login:1.0.0 /bin/sh -c "dotnet run"`
 
 You need to provide a Facebook AppId and AppSecret to connect to facebook.
+
+Test that it is running
+
+1. `curl -H "Content-Type: application/json" -X POST -d '{"accessToken":<user-facebook-access-token>}' http://localhost:5000/api/externalauth/facebook`
